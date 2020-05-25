@@ -1,19 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { FC, useState, useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Routes from "./Screens/Routes";
+import { AppLoading } from "expo";
+import { useFonts } from "@use-expo/font";
+import { StatusBar } from "react-native";
 
-export default function App() {
+const App: FC = () => {
+  // const [fontLoaded] = useFonts({
+  //   dogbyte: require("./assets/fonts/dogbyte.otf"),
+  // });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <>
+      <StatusBar barStyle="light-content" />
+      <View style={styles.container}>
+        <Routes />
+      </View>
+    </>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
